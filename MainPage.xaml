@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppHotel.MainPage"
+    Title="Hotel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="18"
+                             BackgroundColor="#F3F6FA">
+
+            <Label Text="HOTEL PREMIUM"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#17365D"
+                   HorizontalOptions="Center"/>
+
+            <Image Source="hotel.jpg"
+                   HeightRequest="180"
+                   Aspect="AspectFill"/>
+
+            <Label Text="Faça sua reserva"
+                   FontSize="23"
+                   FontAttributes="Bold"
+                   TextColor="#17365D"/>
+
+            <Label Text="Nome do hóspede"
+                   TextColor="#333333"/>
+
+            <Entry x:Name="NomeEntry"
+                   Placeholder="Digite seu nome"
+                   BackgroundColor="White"/>
+
+            <Label Text="Quantidade de hóspedes"
+                   TextColor="#333333"/>
+
+            <Stepper x:Name="HospedesStepper"
+                     Minimum="1"
+                     Maximum="10"
+                     Increment="1"
+                     Value="1"
+                     ValueChanged="OnHospedesChanged"/>
+
+            <Label x:Name="HospedesLabel"
+                   Text="Hóspedes: 1"
+                   TextColor="#17365D"/>
+
+            <Label Text="Data de entrada"
+                   TextColor="#333333"/>
+
+            <DatePicker x:Name="DataPicker"
+                        Format="dd/MM/yyyy"
+                        MinimumDate="2026-11-06"/>
+
+            <Label Text="Tipo de quarto"
+                   TextColor="#333333"/>
+
+            <Picker x:Name="QuartoPicker"
+                    Title="Selecione um quarto">
+                <Picker.Items>
+                    <x:String>Quarto simples</x:String>
+                    <x:String>Quarto duplo</x:String>
+                    <x:String>Suíte</x:String>
+                    <x:String>Suíte presidencial</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Button Text="Confirmar reserva"
+                    BackgroundColor="#17365D"
+                    TextColor="White"
+                    CornerRadius="12"
+                    Clicked="OnReservarClicked"/>
+
+            <Label x:Name="ResultadoLabel"
+                   TextColor="#17365D"
+                   FontSize="15"
+                   HorizontalOptions="Center"/>
+
+            <Button Text="Sobre o aplicativo"
+                    BackgroundColor="#D6A84F"
+                    TextColor="#17365D"
+                    CornerRadius="12"
+                    Clicked="OnSobreClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
